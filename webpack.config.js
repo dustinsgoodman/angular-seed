@@ -1,13 +1,18 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'app', 'app.js'),
+  entry: path.resolve(__dirname, 'app', 'app.ts'),
   output: {
     path: path.resolve(__dirname, 'output'),
     filename: 'bundle.js'
   },
   module: {
     rules: [
+      {
+        test: /\.ts/,
+        exclude: /node_modules/,
+        use: ['babel-loader', 'ts-loader']
+      },
       {
         test: /\.js/,
         use: {
@@ -22,6 +27,9 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
+  },
+  resolve: {
+    extensions: [".ts", ".js"]
   },
   devServer: {
     contentBase: './app',
