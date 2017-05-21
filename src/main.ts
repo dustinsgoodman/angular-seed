@@ -1,6 +1,6 @@
 import * as angular from 'angular';
 
-import './app.scss';
+import './styles.scss';
 
 export const AppModule = angular
   .module('myApp', [

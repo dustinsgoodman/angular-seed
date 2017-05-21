@@ -1,16 +1,21 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "allowJs": true,
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "es6",
+    "moduleResolution": "node",
     "noImplicitAny": false,
-    "removeComments": true,
     "outDir": "./dist",
     "sourceMap": true,
     "target": "es5",
-    "allowJs": true,
-    "experimentalDecorators": true
+    "typeRoots": [
+      "../node_modules/@types"
+    ]
   },
   "include": [
-    "app/**/*"
+    "src/app/**/*"
   ],
   "exclude": [
     "node_modules",

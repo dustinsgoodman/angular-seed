@@ -31,13 +31,14 @@
     "sass-loader": "^6.0.5",
     "style-loader": "^0.17.0",
     "ts-loader": "^2.1.0",
+    "tslint": "^3.13.0",
     "typescript": "^2.3.2",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
     "build": "webpack -p",
-    "dev": "webpack-dev-server --hot --inline",
+    "lint": "tslint \"src/**/*.ts\"",
     "start": "webpack-dev-server --hot --inline",
     "update-deps": "yarn update",
     "prestart": "yarn install",

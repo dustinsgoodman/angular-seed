@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'app', 'app.ts'),
+  entry: path.resolve(__dirname, 'src', 'main.ts'),
   output: {
     path: path.resolve(__dirname, 'output'),
     filename: 'bundle.js'
@@ -32,7 +32,7 @@ module.exports = {
     extensions: [".ts", ".js"]
   },
   devServer: {
-    contentBase: './app',
+    contentBase: './src',
     publicPath: '/output'
   }
 };
