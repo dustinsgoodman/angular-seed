@@ -20,6 +20,8 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^0.2.3",
@@ -39,7 +41,7 @@
   "scripts": {
     "build": "webpack -p",
     "lint": "tslint \"src/**/*.ts\"",
-    "start": "webpack-dev-server --hot --inline",
+    "start": "webpack-dev-server",
     "update-deps": "yarn update",
     "prestart": "yarn install",
     "pretest": "yarn install",
