@@ -1,10 +1,11 @@
+const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'main.ts'),
   output: {
-    path: path.resolve(__dirname, 'output'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'app.js'
   },
   module: {
@@ -34,6 +35,11 @@ module.exports = {
         test: /\.(jpg|jpeg|gif|png|ico)/,
         exclude: /node_modules/,
         loader: 'file-loader?name=[path][name].[ext]'
+      },
+      {
+        test: /\.(html)/,
+        exclude: /node_modules/,
+        loader: 'file-loader?name=templates/[name].[ext]'
       }
     ]
   },
@@ -42,7 +48,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './src',
-    publicPath: '/output'
+    publicPath: '/dist'
   },
   plugins: [
     new ExtractTextPlugin('app.css'),
