@@ -1,34 +1,37 @@
-//jshint strict: false
+var webpackConfig = require('./webpack-test.config.js');
+
 module.exports = function(config) {
   config.set({
 
-    basePath: './app',
-
-    files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'components/**/*.js',
-      'view*/**/*.js'
-    ],
-
-    autoWatch: true,
+    basePath: 'src',
 
     frameworks: ['jasmine'],
 
-    browsers: ['Chrome'],
+    files: [
+      '/**/*.spec.ts'
+    ],
+
+    preprocessors: {
+      '**/*.spec.ts': ['webpack'],
+      '**/*.ts': ['webpack'],
+    },
+
+    autoWatch: true,
+
+    browsers: [],
 
     plugins: [
       'karma-chrome-launcher',
       'karma-firefox-launcher',
       'karma-jasmine',
-      'karma-junit-reporter'
+      'karma-webpack'
     ],
 
-    junitReporter: {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
-    }
+    reporters: ['progress'],
 
+    webpack: {
+      module: webpackConfig.module,
+      resolve: webpackConfig.resolve
+    }
   });
 };

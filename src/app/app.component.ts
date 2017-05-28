@@ -6,12 +6,13 @@ class AppController {
   
   constructor() {}
 
-  $onInit() {
-    this.title = 'Test';
-  }
+  $onInit() {}
 }
 
 export const AppComponent: ng.IComponentOptions = {
   templateUrl: './dist/templates/app.component.html',
-  controller: AppController
+  controller: AppController,
+  bindings: {
+    title: '@'
+  }
 };
