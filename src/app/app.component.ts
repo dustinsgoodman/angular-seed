@@ -1,5 +1,7 @@
+import './app.component.html';
+
 class AppController {
-  // static $inject: string[] = ['TodoService'];
+  static $inject: string[] = [];
   title: String;
   
   constructor() {}
@@ -9,7 +11,7 @@ class AppController {
   }
 }
 
-export const AppComponent = {
-  templateUrl: './app.component.html',
+export const AppComponent: ng.IComponentOptions = {
+  templateUrl: './dist/templates/app.component.html',
   controller: AppController
 };
